@@ -3,7 +3,6 @@
 
 int main () {
 
-
   arrayList my_list;
   my_list.add(1);
   my_list.add(1);
@@ -13,22 +12,11 @@ int main () {
   my_list.add(1);
   my_list.add(1);
 
-
   my_list.remove(1);
-  
   std::cout<< my_list.size() << std::endl;
-  
   my_list.remove(my_list.size());
-  
   std::cout<< "hi: "<< my_list.size() << std::endl;
-
   std::cout<< my_list.get(1) << std::endl;
-
-
-
-
-
-
 
   int x = 10;
   int subA1 [10] = {1,2,3,4,5,6,7,8,9,10};
@@ -40,8 +28,8 @@ int main () {
   {1,2,3,4,5,6,7,8,9,10},
   {1,2,3,4,5,6,7,8,9,10}
   };  
-  //not allowed to declare the array of arrays as {subA1, subA2, subA3}
 
+  //not allowed to declare the array of arrays as {subA1, subA2, subA3}
   for(int i = 0; i < 3; i++){
      
      for(int j = 0; j < 10; j++){
