@@ -12,14 +12,21 @@ int main () {
   my_list.add(1);
   my_list.add(1);
   my_list.add(1);
-  std::cout<< my_list.get(2) << std::endl;
-  std::cout<< my_list.size() << std::endl;
 
-  my_list.clear();
+
+  my_list.remove(1);
+  
   std::cout<< my_list.size() << std::endl;
-  if(my_list.isEmpty()){
-  	std::cout<<"hello world!"<<std::endl;
-  }
+  
+  my_list.remove(my_list.size());
+  
+  std::cout<< "hi: "<< my_list.size() << std::endl;
+
+  std::cout<< my_list.get(1) << std::endl;
+
+
+
+
 
 
 

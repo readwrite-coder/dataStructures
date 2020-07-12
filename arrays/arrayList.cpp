@@ -1,4 +1,5 @@
 #include "arrayList.h"
+#include <iostream>
 
 arrayList::arrayList(){
 	arrayCount = 0;
@@ -37,4 +38,21 @@ void arrayList::clear(){
 }
 bool arrayList::isEmpty(){
 	return this->size() == 0;
+}
+void arrayList::remove(int index){
+	if (index >= arrayCount || index < 0){
+		return;
+	}
+	int * temp = new int[arrayCapacity];
+	for(int i = 0; i < arrayCount; i++){
+		if(i >= index){
+			temp[i] = start[i+1];
+		}
+		else{
+			temp[i] = start[i];
+		}
+	}
+	arrayCount--;
+	start = temp;
+	return;
 }
