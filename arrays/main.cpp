@@ -5,18 +5,41 @@ int main () {
 
   arrayList my_list;
   my_list.add(1);
-  my_list.add(1);
+  my_list.add(2);
   my_list.add(314);
-  my_list.add(1);
-  my_list.add(1);
-  my_list.add(1);
-  my_list.add(1);
+  my_list.add(44);
+  my_list.add(100);
+  my_list.add(100);
+  //my_list.add(0,69);
+  
+  for(int i = 0; i < my_list.size(); i++){
+    std::cout << my_list.get(i) << ", ";
+  }
+  std::cout << std::endl;
 
-  my_list.remove(1);
-  std::cout<< my_list.size() << std::endl;
   my_list.remove(my_list.size());
-  std::cout<< "hi: "<< my_list.size() << std::endl;
-  std::cout<< my_list.get(1) << std::endl;
+  my_list.remove(my_list.size()-1); //should delete the last 100, so list is 1, 2, 314, 44, 100
+  my_list.remove(my_list.size()-3); //should delete 314, now list is 1, 2, 44, 100
+
+  for(int i = 0; i < my_list.size(); i++){
+    std::cout << my_list.get(i) << ", ";
+  }
+  std::cout << std::endl;
+
+  if(my_list.isEmpty()){
+    std::cout << "list is empty" << std::endl;
+  }
+  else{
+    std::cout << "list is not empty, size is: " << my_list.size() << std::endl;
+  }
+  std::cout<< my_list.get(0) << std::endl;
+  my_list.clear();
+  if(my_list.isEmpty()){
+    std::cout << "list is empty" << std::endl;
+  }
+  else{
+    std::cout << "list is not empty, size is: " << my_list.size() << std::endl;
+  }
 
   int x = 10;
   int subA1 [10] = {1,2,3,4,5,6,7,8,9,10};
@@ -35,7 +58,6 @@ int main () {
      for(int j = 0; j < 10; j++){
      	//std::cout << array[i][j] <<" ";
      }
-
      //std::cout << std::endl;
   }
 
