@@ -1,7 +1,25 @@
 #include <iostream>
 #include "arrayList.h"
+#include "hashMap.h"
 
 int main () {
+
+  hashMap unordered_map;
+  unordered_map.add("Tony Ferguson", "Justin Gaethje");
+  unordered_map.add("Conor McGregor", "Donald Cerrone");
+  unordered_map.add("Khabib Nurmagomedov", "Dustin Poirier");
+  unordered_map.add("Petr Yan", "Jose Aldo");
+  unordered_map.add("Kamaru Usman", "Jorge Masvidal");
+  unordered_map.add("Donald Cerrone", "Anthony Pettis");
+  unordered_map.add("Andrew Trinh", "Jocelyn Velazquez");
+  unordered_map.add("Ryan Trinh", "Hannah Lee");
+  unordered_map.add("Dustin Poirier", "Dan Hooker");
+  unordered_map.add("Dan Hooker","Dustin Poirier");
+  unordered_map.add("Gorge Masvidal", "Kamaru Usman");
+  unordered_map.add("Jon Jones", "Thiago Santos");
+  unordered_map.display();
+  std::cout << "The last fight Khabib had was with: " << unordered_map.find("Khabib Nurmagomedov") << std::endl;
+
 
   arrayList my_list;
   my_list.add(1);
@@ -10,35 +28,35 @@ int main () {
   my_list.add(44);
   my_list.add(100);
   my_list.add(100);
-  //my_list.add(0,69);
+  my_list.add(0,69);
   
   for(int i = 0; i < my_list.size(); i++){
-    std::cout << my_list.get(i) << ", ";
+    //std::cout << my_list.get(i) << ", ";
   }
-  std::cout << std::endl;
+  //std::cout << std::endl;
 
   my_list.remove(my_list.size());
-  my_list.remove(my_list.size()-1); //should delete the last 100, so list is 1, 2, 314, 44, 100
-  my_list.remove(my_list.size()-3); //should delete 314, now list is 1, 2, 44, 100
+  my_list.remove(my_list.size()-1); //should delete the last 100, so list is 69, 1, 2, 314, 44, 100
+  my_list.remove(my_list.size()-3); //should delete 314, now list is 69, 1, 2, 44, 100
 
   for(int i = 0; i < my_list.size(); i++){
-    std::cout << my_list.get(i) << ", ";
+    //std::cout << my_list.get(i) << ", ";
   }
-  std::cout << std::endl;
+  //std::cout << std::endl;
 
   if(my_list.isEmpty()){
-    std::cout << "list is empty" << std::endl;
+    //std::cout << "list is empty" << std::endl;
   }
   else{
-    std::cout << "list is not empty, size is: " << my_list.size() << std::endl;
+    //std::cout << "list is not empty, size is: " << my_list.size() << std::endl;
   }
-  std::cout<< my_list.get(0) << std::endl;
+
   my_list.clear();
   if(my_list.isEmpty()){
-    std::cout << "list is empty" << std::endl;
+    //std::cout << "list is empty" << std::endl;
   }
   else{
-    std::cout << "list is not empty, size is: " << my_list.size() << std::endl;
+    //std::cout << "list is not empty, size is: " << my_list.size() << std::endl;
   }
 
   int x = 10;

@@ -11,7 +11,7 @@ public:
 arrayList();
 
 void add (int val); //append the value at the end of the list. 
-//void add (int index, int val); //append the value at the specified index. 
+void add (int index, int val); //append the value at the specified index. 
 int get (int index); //return the value at the specified index of the list.
 int size(); //return the size of the current list.
 bool isEmpty(); //returns true if the list is empty.

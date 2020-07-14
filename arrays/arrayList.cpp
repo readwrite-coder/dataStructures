@@ -21,6 +21,31 @@ void arrayList::add(int element){
 	arrayCount++;
 }
 
+void arrayList::add(int index, int val){
+	if(index > this->arrayCount || index < 0){
+		return; 
+	}
+	int * temp = new int[arrayCount + 1];
+	for(int i = 0; i < arrayCount; i++){
+		if(i >= index){
+			if(i == index){
+				temp[i] = val;
+				arrayCount++;
+			}
+			else{
+				temp[i] = start[i-1];
+			}
+		}
+		else{
+			temp[i] = start[i];
+		}
+	}
+	int * temp_null = start;
+	start = temp;
+	temp_null = NULL;
+	return;
+}
+
 int arrayList::get(int index){
 	if(index > arrayCount || index < 0){
 		return -1;
