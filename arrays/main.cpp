@@ -1,8 +1,17 @@
 #include <iostream>
 #include "arrayList.h"
 #include "hashMap.h"
+#include "linkedList.h"
 
 int main () {
+
+
+  linkedList my_list2;
+  my_list2.insert("Tony Ferguson", "Justin Gaethje");
+  my_list2.insert("Petr Yan", "Jose Aldo");
+  my_list2.insert("Gorge Masvidal", "Kamaru Usman");
+  my_list2.print();
+
 
   hashMap unordered_map;
   unordered_map.add("Tony Ferguson", "Justin Gaethje");
@@ -17,8 +26,8 @@ int main () {
   unordered_map.add("Dan Hooker","Dustin Poirier");
   unordered_map.add("Gorge Masvidal", "Kamaru Usman");
   unordered_map.add("Jon Jones", "Thiago Santos");
-  unordered_map.display();
-  std::cout << "The last fight Khabib had was with: " << unordered_map.find("Khabib Nurmagomedov") << std::endl;
+  //unordered_map.display();
+  //std::cout << "The last fight Khabib had was with: " << unordered_map.find("Khabib Nurmagomedov") << std::endl;
 
 
   arrayList my_list;
