@@ -10,6 +10,8 @@ int main () {
   my_list2.insert("Tony Ferguson", "Justin Gaethje");
   my_list2.insert("Petr Yan", "Jose Aldo");
   my_list2.insert("Gorge Masvidal", "Kamaru Usman");
+  my_list2.insert("Conor McGregor", "Donald Cerrone");
+  my_list2.insert("Dustin Poirier", "Dan Hooker");
   my_list2.print();
 
 
