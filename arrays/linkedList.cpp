@@ -8,6 +8,13 @@ linkedList::linkedList(){
 	tail = NULL;
 	ListCount = 0;
 }
+std::string linkedList::getFirstItem(){
+	node * temp = head;
+	if (temp == NULL){
+		return "0";
+	}
+	return head->value;
+}
 
 void linkedList::insert(std::string key, std::string value){
 	if(head == NULL){
@@ -33,8 +40,9 @@ void linkedList::print(){
 	node * temp = head;
 	int i = 0;
 	while(temp != NULL){
-		std::cout << i << ": " << temp->key << std::endl;
+		std::cout << temp->key << " " << temp->value << ", ";
 		temp = temp->next;
 		i++;
 	}
+	std::cout<<std::endl;
 }

@@ -2,9 +2,16 @@
 #include "arrayList.h"
 #include "hashMap.h"
 #include "linkedList.h"
+#include "graph.h"
 
 int main () {
 
+  graph myGraph;
+  myGraph.addVertex("Tony Ferguson");
+  myGraph.addVertex("Conor McGregor");
+  myGraph.addVertex("Donald Cerrone");
+  myGraph.addEdge("Tony Ferguson", "Donald Cerrone");
+  myGraph.print();
 
   linkedList my_list2;
   my_list2.insert("Tony Ferguson", "Justin Gaethje");
@@ -12,7 +19,7 @@ int main () {
   my_list2.insert("Gorge Masvidal", "Kamaru Usman");
   my_list2.insert("Conor McGregor", "Donald Cerrone");
   my_list2.insert("Dustin Poirier", "Dan Hooker");
-  my_list2.print();
+  //my_list2.print();
 
 
   hashMap unordered_map;

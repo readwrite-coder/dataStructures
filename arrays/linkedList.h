@@ -9,13 +9,12 @@ linkedList();
 
 node * head;
 node * tail;
-
 int ListCount;
 
 void insert(std::string key, std::string value);
 void print();
-//void insert(int value, int index);
-//int find(std::string key);
+std::string getFirstItem();
+
 };
 
 #endif
