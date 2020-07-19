@@ -10,7 +10,20 @@ int main () {
   myGraph.addVertex("Tony Ferguson");
   myGraph.addVertex("Conor McGregor");
   myGraph.addVertex("Donald Cerrone");
+  myGraph.addVertex("Anthony Pettis");
+  myGraph.addVertex("Khabib Nurmagomedov");
+  myGraph.addVertex("Dustin Poirier");
+
+
+  myGraph.addEdge("Tony Ferguson", "Anthony Pettis");
   myGraph.addEdge("Tony Ferguson", "Donald Cerrone");
+  myGraph.addEdge("Conor McGregor", "Donald Cerrone");
+  myGraph.addEdge("Conor McGregor", "Khabib Nurmagomedov");
+  myGraph.addEdge("Dustin Poirier", "Khabib Nurmagomedov");
+  myGraph.addEdge("Dustin Poirier", "Conor McGregor");
+  myGraph.addEdge("Donald Cerrone", "Anthony Pettis");
+
+
   myGraph.print();
 
   linkedList my_list2;

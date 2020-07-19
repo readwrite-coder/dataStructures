@@ -23,7 +23,7 @@ void graph::addVertex(std::string vertex){
 		numberNodes++;
 		return;
 	}
-	if (numberNodes >= (linkedListCapacity/2)){
+	if (numberNodes >= (linkedListCapacity)){
 		linkedListCapacity *= 2;
 		linkedList * newArray = new linkedList[linkedListCapacity];
 		for(int i = 0; i < numberNodes; i++){
@@ -31,7 +31,8 @@ void graph::addVertex(std::string vertex){
 		}
 		linkedList * temp = vertices;
 		vertices = newArray;
-		delete[] vertices;
+		delete[] temp;
+		std::cout<< "the number of nodes: "<< numberNodes << ", number of linkedListCapacity: "<< linkedListCapacity<<std::endl;
 	}
 	linkedList newNode;
 	newNode.insert("vertex", vertex);
@@ -47,6 +48,7 @@ void graph::addEdge(std::string vertex1, std::string vertex2){
 		if(vertices[i].getFirstItem() == vertex1){
 			//std::cout<<"hello world!" <<std::endl;
 			vertices[i].insert("edge", vertex2);
+
 		}
 		if(vertices[i].getFirstItem() == vertex2){
 			vertices[i].insert("edge", vertex1);
