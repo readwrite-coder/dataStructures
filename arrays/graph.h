@@ -8,15 +8,23 @@ public:
 graph();
 int numberNodes;
 int numberEdges;
-int matrixCapacity;
+
+//int matrixCapacity;
 int linkedListCapacity;
 
 linkedList * vertices; //array of linked lists;
-
-int ** adjacencyMatrix;
+//int ** adjacencyMatrix;
 
 void addVertex(std::string vertex);
+
+void deleteVertex(std::string vertex);
+
+int vertexIndex(std::string vertex);
+
 void addEdge(std::string vertex1, std::string vertex2);
+
+bool edgeExists(std::string vertex1, std::string vertex2);
+
 void print();
 
 

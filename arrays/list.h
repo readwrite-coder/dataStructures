@@ -1,5 +1,6 @@
 /*
 ________________________________________Data Type (ADT - abstract data type)______________________________________________
+
 	An abstract data type, or ADT is
 		– A model for a grouping data and the operations on that data
 		- The model allows us to separate the decision of what data structure to use and how it will be used in our higher level application
@@ -8,6 +9,7 @@ ________________________________________Data Type (ADT - abstract data type)____
 	examples of ADT: List, Dictionary/Map, Set. 
 
 __________________________________________________Data Structure______________________________________________________
+
 	A data structure is
 		– An implementation of an ADT in a given programming language
 		- Each ADT we will examine in this course has certain:
@@ -64,6 +66,7 @@ A List Interface
 		3) By a return value: The return value data cannot be modified.	
 
 _________________Stacks and Queues - Lists with restrictions about how insertion and removal are done_________________
+
 	– Stack – Only ever insert/remove from one end of the list
 	– Queue – Only ever insert at one end and remove from the other
 
@@ -222,6 +225,8 @@ ______________________________________________________Graph ADT_________________
 		– List of vertices each having their own adjacent list
 	Alternatively, sometimes graphs are also represented with an adjacency matrix
 		– Entry at (i,j) = 1 if there is an edge between vertex i and j, 0 otherwise
+
+______________________________________________ Tree ______________________________________________
 
 		
 */
