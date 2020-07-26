@@ -3,6 +3,7 @@
 #include "arrayList.h"
 
 template<typename T>
+//______________________
 class stack {	
 	public:
 	stack();
@@ -16,9 +17,9 @@ class stack {
 	//______________________
 	private:
 	arrayList<T> mylist_; // or LList mylist_; all stack operations are O(1) for linkedList implementation. 
-	int numElements;
-		
+	int numElements;	
 };
+//______________________
 template<typename T>
 stack<T>::stack(){
 	numElements = 0;
