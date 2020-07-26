@@ -1,6 +1,7 @@
 #ifndef ARRAYLIST_H
 #define ARRAYLIST_H
 
+template <typename T>
 class arrayList {
 
 public:
@@ -11,27 +12,104 @@ bool empty(); //returns true if the list is empty.
 
 //void add (int val); //append the value at the end of the list. 
 //void add (int index, int val); //append the value at the specified index.
-void push_back (int val);
-void insert (int index, int val); //append the value at the specified index. 
+void push_back (T val);
+void insert (int index, T val); //append the value at the specified index. 
 
-int get (int index); //return the value at the specified index of the list.
+T get (int index); //return the value at the specified index of the list.
 
 
 void clear(); //delete the entire list.
 void remove(int index); //remove the list item at the specified index. 
 
 private:
-int * start;
+T * start;
 int arrayCount; 
 int arrayCapacity;
 
-//we want our arrayList to store integer values 
-//we want to be able to insert an element into our arraylist
-//we want our arrayList to dynamically grow when it runs out of size. 
-//we want to be able to retrieve an int element at its index.
-//we want to be able to delete an int element at its index. 
-
 };
+template <typename T>
+arrayList<T>::arrayList(){
+	arrayCount = 0;
+	arrayCapacity = 2;
+	start = new T[arrayCapacity];
+}
 
-
+template <typename T>
+int arrayList<T>::size(){
+	return arrayCount;
+}
+template <typename T>
+bool arrayList<T>::empty(){
+	return this->size() == 0;
+}
+template <typename T>
+void arrayList<T>::push_back(T element){
+	if(arrayCount == arrayCapacity){
+		std::string * temp = new std::string[arrayCapacity*2];
+		arrayCapacity *= 2;
+		for(int i = 0; i < arrayCount; i++){
+			temp[i] = start[i];
+		}
+		start = temp;
+	}
+	start[arrayCount] = element;
+	arrayCount++;
+}
+template <typename T>
+void arrayList<T>::insert(int index, T val){
+	if(index > this->arrayCount || index < 0){
+		return; 
+	}
+	T * temp = new T[arrayCount + 1];
+	for(int i = 0; i < arrayCount; i++){
+		if(i >= index){
+			if(i == index){
+				temp[i] = val;
+				arrayCount++;
+			}
+			else{
+				temp[i] = start[i-1];
+			}
+		}
+		else{
+			temp[i] = start[i];
+		}
+	}
+	T * temp_null = start;
+	start = temp;
+	temp_null = NULL;
+	return;
+}
+template <typename T>
+T arrayList<T>::get(int index){
+	T temp;
+	if(index > arrayCount || index < 0){
+		return temp;
+	}
+	return start[index];
+}
+template <typename T>
+void arrayList<T>::clear(){
+	arrayCount = 0;
+	arrayCapacity = 2;
+	start = new T[arrayCapacity];
+}
+template <typename T>
+void arrayList<T>::remove(int index){
+	if (index >= arrayCount || index < 0){
+		return;
+	}
+	T * temp = new T[arrayCapacity];
+	for(int i = 0; i < arrayCount; i++){
+		if(i >= index){
+			temp[i] = start[i+1];
+		}
+		else{
+			temp[i] = start[i];
+		}
+	}
+	arrayCount--;
+	start = temp;
+	return;
+}
 #endif
