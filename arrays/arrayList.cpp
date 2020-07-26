@@ -6,9 +6,15 @@ arrayList::arrayList(){
 	arrayCapacity = 2;
 	start = new int[arrayCapacity];
 }
+int arrayList::size(){
+	return arrayCount;
+}
+bool arrayList::empty(){
+	return this->size() == 0;
+}
 
 //append to the back of the list;
-void arrayList::add(int element){
+void arrayList::push_back(int element){
 	if(arrayCount == arrayCapacity){
 		int * temp = new int[arrayCapacity*2];
 		arrayCapacity *= 2;
@@ -21,7 +27,7 @@ void arrayList::add(int element){
 	arrayCount++;
 }
 
-void arrayList::add(int index, int val){
+void arrayList::insert(int index, int val){
 	if(index > this->arrayCount || index < 0){
 		return; 
 	}
@@ -53,17 +59,13 @@ int arrayList::get(int index){
 	return start[index];
 }
 
-int arrayList::size(){
-	return arrayCount;
-}
+
 void arrayList::clear(){
 	arrayCount = 0;
 	arrayCapacity = 2;
 	start = new int[arrayCapacity];
 }
-bool arrayList::isEmpty(){
-	return this->size() == 0;
-}
+
 void arrayList::remove(int index){
 	if (index >= arrayCount || index < 0){
 		return;

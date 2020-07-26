@@ -8,25 +8,22 @@ class hashMap{
 
 
 int m; //the size of the table is a prime number. 
-std::string * array; 
+std::string * array; //an array of strings
 
 public:
 hashMap();
+
 void add(std::string key, std::string value);
+
 void remove(std::string key);
-std::string find(std::string key); 
+
+std::string find(std::string key); //returns a value associated with a particular key
+
 int hash(std::string value);
+
 void display();
 
-/*
-A hash table implements a map ADT 
-– Add(key,value) "Jill" - 6
-– Remove(key)
-– Lookup/Find(key) : returns value
-• In a BST the keys are kept in order – A Binary Search Tree implements an ORDERED MAP
-• In a hash table keys are evenly distributed throughout the table (unordered)
-– A hash table implements an UNORDERED MAP
-*/
+
 /*
 C++11 added new container classes: 
 – unordered_map

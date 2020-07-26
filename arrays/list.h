@@ -22,7 +22,7 @@ __________________________________________________Data Structure________________
 	data structure examples: array, linked-list. 
 	We can think of an ascii character as a primitive(fundamental) data type, and a string as an abstract data type.
 
-______________________________________________________Lists________________________________________________________
+__________________________________________________Lists_____________________________________________________
 
 	Ordered collection of items, which may contain duplicate values, usually accessed based on their position (index)
 		– Ordered = Each item has an index and there is a front andback (start and end)
@@ -65,28 +65,14 @@ A List Interface
 		2) Before a parameter: The data for the parameter cannot be modified by the function
 		3) By a return value: The return value data cannot be modified.	
 
-_________________Stacks and Queues - Lists with restrictions about how insertion and removal are done_________________
+___________________________________________Stacks_____________________________________________
 
+Stacks and Queues - Lists with restrictions about how insertion and removal are done
 	– Stack – Only ever insert/remove from one end of the list
 	– Queue – Only ever insert at one end and remove from the other
 
 Stack ADT: A list of items where insertion and removal only occurs at one end of the list
-	#ifndef STACK_H
-	#define STACK_H
-	class Stack {	
-		public:
-		Stack();
-		~Stack();
-		int size() const;
-		bool empty() const;
-		void push(const int& v);
-		const int& top() const;
-		void pop();
-		private:
-		ArrayList mylist_;
-		// or LList mylist_; all stack operations are O(1) for linkedList implementation. 
-	};
-	#endif
+
 	- Stacks are LIFO
 	– Newest item at top
 	– Oldest item at bottom
@@ -96,6 +82,8 @@ Stack ADT: A list of items where insertion and removal only occurs at one end of
 	– pop() - Remove the top item from the Stack
 	– top() - Get a reference to the top item on the Stack (don't remove it though!)
 	– size() - Get the number of items in the Stack
+
+_____________________________________________Queue__________________________________________________
 
 Queue ADT: Queue – A list of items where insertion only occurs at the back of the list and removal only occurs at the front of the list
 	#ifndef QUEUE_H
@@ -184,7 +172,8 @@ DEQUE ADT - Double-ended queues: Equally good at pushing and popping on either e
 		– What data structure may be best to implement deque? circular doubly linked list? circular array/buffer?
 	If vector is more powerful than a deque (permits insertion or removal any place, so can implement List), why not always uses vectors instead?
 
-______________________________________________Maps / Dictionaries______________________________________________________
+_____________________________________Maps/Dictionaries_______________________________________________
+
 Stores key,value pairs
 	– Example: Map student names to their GPA
 	- Keys must be unique (can only occur once in the structure)
@@ -197,7 +186,17 @@ Stores key,value pairs
 		- Lookup / Get: Lookup the value associated with the given key or indicate the key,value pair doesn't exist
 		input: Key, output: Value associated with the key
 
-______________________________________________________Set______________________________________________________
+________________________________________ Hash Table ______________________________________________
+
+	A hash table implements a map ADT 
+		– Add(key,value) "Jill" - 6 (years old)
+		– Remove(key)
+		– Lookup/Find(key) : returns value
+	• In a BST the keys are kept in order – A Binary Search Tree implements an ORDERED MAP
+	• In a hash table keys are evenly distributed throughout the table (unordered)
+		– A hash table implements an UNORDERED MAP
+
+_____________________________________________Set____________________________________________________
 
 	A set is a dictionary where we only store keys (no associated values)
 	– Example: All the courses taught at USC (ARLT 100, ..., CSCI 104, MATH 226, ...)
@@ -210,7 +209,7 @@ ______________________________________________________Set_______________________
 		- Remove: Remove; input: Key
 		- In / Find: Check if the given key is present in the map; input: Key, output: bool
 
-______________________________________________________Graph ADT______________________________________________________
+__________________________________________Graph ADT______________________________________________________
 
 	A Graph ADT should provide at least the following operations:
 		1. Add a node.
@@ -226,7 +225,7 @@ ______________________________________________________Graph ADT_________________
 	Alternatively, sometimes graphs are also represented with an adjacency matrix
 		– Entry at (i,j) = 1 if there is an edge between vertex i and j, 0 otherwise
 
-______________________________________________ Tree ______________________________________________
+___________________________________________ Tree ______________________________________________
 
 		
 */
