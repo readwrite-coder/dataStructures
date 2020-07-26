@@ -1,10 +1,10 @@
 #ifndef STACK_H
 #define STACK_H
-#include "arrayList.h"
-
+#include "arrayList.h"   
 template<typename T>
 //______________________
 class stack {	
+	//______________________
 	public:
 	stack();
 	//______________________
@@ -18,7 +18,8 @@ class stack {
 	private:
 	arrayList<T> mylist_; // or LList mylist_; all stack operations are O(1) for linkedList implementation. 
 	int numElements;	
-};
+	//______________________
+};  
 //______________________
 template<typename T>
 stack<T>::stack(){
@@ -45,5 +46,4 @@ template<typename T>
 void stack<T>::pop() {
 	numElements--;
 }
-
 #endif

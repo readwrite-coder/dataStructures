@@ -1,32 +1,29 @@
 #ifndef ARRAYLIST_H
 #define ARRAYLIST_H
-
 template <typename T>
+//______________________
 class arrayList {
-
-public:
-arrayList();
-
-int size(); //return the size of the current list.
-bool empty(); //returns true if the list is empty.
-
-//void add (int val); //append the value at the end of the list. 
-//void add (int index, int val); //append the value at the specified index.
-void push_back (T val);
-void insert (int index, T val); //append the value at the specified index. 
-
-T get (int index); //return the value at the specified index of the list.
-
-
-void clear(); //delete the entire list.
-void remove(int index); //remove the list item at the specified index. 
-
-private:
-T * start;
-int arrayCount; 
-int arrayCapacity;
-
+	//______________________
+	public:
+	arrayList();
+	//______________________
+	int size(); //return the size of the current list.
+	bool empty(); //returns true if the list is empty.
+	//______________________
+	void push_back (T val);
+	void insert (int index, T val); //append the value at the specified index. 
+	T get (int index); //return the value at the specified index of the list.
+	//______________________
+	void clear(); //delete the entire list.
+	void remove(int index); //remove the list item at the specified index. 
+	//______________________
+	private:
+	T * start;
+	int arrayCount; 
+	int arrayCapacity;
+	//______________________
 };
+//______________________
 template <typename T>
 arrayList<T>::arrayList(){
 	arrayCount = 0;
